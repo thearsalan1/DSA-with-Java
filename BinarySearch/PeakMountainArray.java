@@ -1,17 +1,14 @@
 package BinarySearch;
 
 public class PeakMountainArray {
-    public static void main(String[] args) {
-        int[] arr={-1,0,2,5,9,8,6,6,3};
-        int lo=0, hi=arr.length-1;
-        while(lo<hi){
-            int mid=(lo+hi)/2;
-            if (arr[mid] < arr[mid + 1]) {
-                lo = mid + 1;
-            } else {
-                hi = mid;
-            }
+    public int peakIndexInMountainArray(int[] arr) {
+        int lo = 1, hi = arr.length - 2;
+        while (lo <= hi) {
+            int mid = (lo + hi) / 2;
+            if (arr[mid] > arr[mid + 1] && arr[mid] > arr[mid - 1]) return mid;
+            else if (arr[mid] > arr[mid - 1] && arr[mid] < arr[mid + 1]) lo = mid + 1;
+            else hi = mid - 1;
         }
-        System.out.println("Peak element: " + arr[lo]);
+        return 234234;
     }
 }
