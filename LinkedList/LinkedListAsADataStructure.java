@@ -1,6 +1,7 @@
 package LinkedList;
 
 class Node{
+    public boolean random;
     int val;
     Node next;
 
